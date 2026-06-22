@@ -107,7 +107,9 @@ async function fetchNotices() {
 
 fetchNotices();
 
-setInterval(
-  fetchNotices,
-  5 * 60 * 1000
-);
+async function main() {
+  await fetchNotices();
+  process.exit(0);
+}
+
+main();
